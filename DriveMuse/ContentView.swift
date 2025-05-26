@@ -229,36 +229,56 @@ struct ContentView: View {
     )
     @StateObject private var speech = SpeechRecognizer()
     @StateObject private var gemini = GeminiService.shared
+    
+    // 読み上げ用シンセサイザーを保持
+    @State private var synthesizer = AVSpeechSynthesizer()
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            TouristMapView(region: $region)
-                .ignoresSafeArea()
-            VStack(alignment: .trailing, spacing: 12) {
-                if !gemini.responseText.isEmpty {
-                    Text("Gemini: \(gemini.responseText)")
-                        .padding(8)
-                        .background(Color.white.opacity(0.8))
-                        .cornerRadius(8)
+            ZStack(alignment: .bottomTrailing) {
+                TouristMapView(region: $region)
+                    .ignoresSafeArea()
+
+                VStack(alignment: .trailing, spacing: 12) {
+                    if !gemini.responseText.isEmpty {
+                        Text("Gemini: \(gemini.responseText)")
+                            .padding(8)
+                            .background(Color.white.opacity(0.8))
+                            .cornerRadius(8)
+                    }
+                    if speech.isRecording {
+                        Text(speech.recognizedText)
+                            .padding(8)
+                            .background(Color.white.opacity(0.8))
+                            .cornerRadius(8)
+                    }
+                    Button(action: {
+                        speech.isRecording ? speech.stopRecording() : speech.startRecording()
+                    }) {
+                        Label(speech.isRecording ? "録音停止" : "話す", systemImage: speech.isRecording ? "mic.fill" : "mic")
+                            .font(.title2).padding()
+                            .background(speech.isRecording ? Color.red : Color.blue)
+                            .foregroundColor(.white).clipShape(Capsule())
+                    }
+                    .padding(.bottom, 20)
                 }
-                if speech.isRecording {
-                    Text(speech.recognizedText)
-                        .padding(8)
-                        .background(Color.white.opacity(0.8))
-                        .cornerRadius(8)
-                }
-                Button(action: {
-                    speech.isRecording ? speech.stopRecording() : speech.startRecording()
-                }) {
-                    Label(speech.isRecording ? "録音停止" : "話す", systemImage: speech.isRecording ? "mic.fill" : "mic")
-                        .font(.title2).padding()
-                        .background(speech.isRecording ? Color.red : Color.blue)
-                        .foregroundColor(.white).clipShape(Capsule())
-                }
-                .padding(.bottom, 20)
+                .padding(.trailing, 20)
             }
-            .padding(.trailing, 20)
-        }
+            // gemini.responseText が変わったら読み上げる
+            .onChange(of: gemini.responseText) { newText in
+                // 1) AVAudioSession を再生モードに
+                let session = AVAudioSession.sharedInstance()
+                try? session.setCategory(.playback, mode: .default)
+                try? session.setActive(true)
+
+                // 2) 読み上げ用の Utterance を作成
+                let utterance = AVSpeechUtterance(string: newText)
+                utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+                utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+
+                // 3) 読み上げ開始
+                synthesizer.speak(utterance)
+            }
+
     }
 }
 

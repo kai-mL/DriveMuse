@@ -8,9 +8,6 @@ struct PlaceDetailView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.UI.padding) {
-            // プレースホルダー画像
-            placeholderImage
-            
             // 場所名
             placeName
             
@@ -29,16 +26,6 @@ struct PlaceDetailView: View {
     }
     
     // MARK: - Subviews
-    
-    private var placeholderImage: some View {
-        Image(systemName: "photo")
-            .resizable()
-            .scaledToFit()
-            .frame(height: Constants.UI.placeholderImageHeight)
-            .foregroundColor(.secondary)
-            .cornerRadius(8)
-            .accessibilityLabel("場所の画像")
-    }
     
     private var placeName: some View {
         Text(mapItem.name ?? "名前不明")

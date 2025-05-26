@@ -11,11 +11,16 @@ struct ContentView: View {
             TouristMapView(viewModel: viewModel)
                 .ignoresSafeArea()
             
-            // 現在地ボタン
+            // 現在地ボタンと状態表示
             VStack {
                 HStack {
                     Spacer()
-                    currentLocationButton
+                    VStack(spacing: 8) {
+                        currentLocationButton
+                        if !viewModel.isLocationPermissionGranted {
+                            locationPermissionPrompt
+                        }
+                    }
                 }
                 Spacer()
             }
@@ -67,20 +72,48 @@ struct ContentView: View {
     /// 現在地ボタン
     private var currentLocationButton: some View {
         Button(action: {
-            withAnimation {
-                viewModel.moveToCurrentLocation()
+            if viewModel.isLocationPermissionGranted {
+                withAnimation {
+                    viewModel.moveToCurrentLocation()
+                }
+            } else {
+                // 設定アプリを開く
+                openLocationSettings()
             }
         }) {
-            Image(systemName: "location.fill")
+            Image(systemName: viewModel.isLocationPermissionGranted ? "location.fill" : "location.slash")
                 .foregroundColor(.white)
                 .font(.system(size: 16, weight: .medium))
                 .frame(width: 44, height: 44)
-                .background(Color.accentColor)
+                .background(viewModel.isLocationPermissionGranted ? Color.accentColor : Color.red)
                 .clipShape(Circle())
                 .shadow(radius: 4)
         }
-        .accessibilityLabel("現在地に移動")
-        .accessibilityHint("現在の位置を地図の中心に表示します")
+        .accessibilityLabel(viewModel.isLocationPermissionGranted ? "現在地に移動" : "位置情報を有効にする")
+        .accessibilityHint(viewModel.isLocationPermissionGranted ? "現在の位置を地図の中心に表示します" : "設定アプリを開いて位置情報を有効にします")
+    }
+    
+    /// 位置情報許可プロンプト
+    private var locationPermissionPrompt: some View {
+        Text("位置情報を\n許可してください")
+            .font(.caption2)
+            .foregroundColor(.white)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(.red.opacity(0.8))
+            .cornerRadius(8)
+    }
+    
+    /// 位置情報設定を開く
+    private func openLocationSettings() {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl)
+        }
     }
     
     /// ローディングインジケータ

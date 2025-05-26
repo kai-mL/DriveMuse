@@ -14,6 +14,7 @@ class LocationManager: NSObject, ObservableObject {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        authorizationStatus = locationManager.authorizationStatus
     }
     
     /// 位置情報の利用許可をリクエスト
@@ -79,7 +80,7 @@ enum LocationError: LocalizedError {
         case .permissionDenied:
             return Constants.Strings.locationPermissionError
         case .locationUnavailable:
-            return "位置情報が取得できません"
+            return Constants.Strings.locationUnavailable
         }
     }
 } 

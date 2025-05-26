@@ -7,10 +7,11 @@ struct Constants {
     // MARK: - Default Locations
     struct DefaultLocation {
         static let shibuya = CLLocationCoordinate2D(latitude: 35.6585, longitude: 139.7013)
+        static let tokyo = CLLocationCoordinate2D(latitude: 35.6762, longitude: 139.6503) // 東京駅
         static let defaultRegion = MKCoordinateRegion(
-            center: shibuya,
-            latitudinalMeters: 1000,
-            longitudinalMeters: 1000
+            center: tokyo, // より観光地の多い東京駅周辺に変更
+            latitudinalMeters: 2000, // 検索範囲を少し広げる
+            longitudinalMeters: 2000
         )
     }
     
@@ -37,7 +38,6 @@ struct Constants {
         static let detailViewHeight: CGFloat = 200
         static let cornerRadius: CGFloat = 12
         static let padding: CGFloat = 16
-        static let placeholderImageHeight: CGFloat = 100
     }
     
     // MARK: - Identifiers
@@ -54,7 +54,8 @@ struct Constants {
         static let phone = "電話"
         static let rating = "評価"
         static let starSymbol = "⭐️"
-        static let locationPermissionError = "位置情報の許可が必要です"
+        static let locationPermissionError = "位置情報の許可が必要です。設定アプリから許可してください。"
         static let searchError = "検索でエラーが発生しました"
+        static let locationUnavailable = "現在地を取得できません。しばらく時間をおいて再度お試しください。"
     }
 } 

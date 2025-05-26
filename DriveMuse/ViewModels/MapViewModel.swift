@@ -10,13 +10,66 @@ class MapViewModel: ObservableObject {
     @Published var searchResults: [MKMapItem] = []
     @Published var isSearching = false
     @Published var error: Error?
+    @Published var isLocationPermissionGranted = false
     
     private var searchTask: Task<Void, Never>?
     private let locationManager = LocationManager()
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
+        setupLocationObservers()
         // 位置情報の許可をリクエスト
         locationManager.requestLocationPermission()
+    }
+    
+    private func setupLocationObservers() {
+        // 位置情報の許可状況を監視
+        locationManager.$authorizationStatus
+            .sink { [weak self] status in
+                self?.handleLocationAuthorizationChange(status)
+            }
+            .store(in: &cancellables)
+        
+        // 現在地の更新を監視
+        locationManager.$currentLocation
+            .compactMap { $0 }
+            .sink { [weak self] location in
+                self?.handleLocationUpdate(location)
+            }
+            .store(in: &cancellables)
+        
+        // 位置情報エラーを監視
+        locationManager.$error
+            .compactMap { $0 }
+            .sink { [weak self] error in
+                self?.error = error
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func handleLocationAuthorizationChange(_ status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse, .authorizedAlways:
+            isLocationPermissionGranted = true
+        case .denied, .restricted:
+            isLocationPermissionGranted = false
+            error = LocationError.permissionDenied
+        case .notDetermined:
+            isLocationPermissionGranted = false
+        @unknown default:
+            isLocationPermissionGranted = false
+        }
+    }
+    
+    private func handleLocationUpdate(_ location: CLLocation) {
+        // 位置情報が許可されている場合、初回取得時に地図を現在地に移動
+        if isLocationPermissionGranted {
+            region = MKCoordinateRegion(
+                center: location.coordinate,
+                latitudinalMeters: 1000,
+                longitudinalMeters: 1000
+            )
+        }
     }
     
     /// POI検索を実行（デバウンス機能付き）
@@ -41,6 +94,12 @@ class MapViewModel: ObservableObject {
         isSearching = true
         defer { isSearching = false }
         
+        // デバッグ用：検索範囲をログ出力
+        #if DEBUG
+        print("POI検索開始 - 中心座標: \(region.center.latitude), \(region.center.longitude)")
+        print("検索範囲: \(region.span.latitudeDelta) x \(region.span.longitudeDelta)")
+        #endif
+        
         do {
             let request = MKLocalPointsOfInterestRequest(coordinateRegion: region)
             request.pointOfInterestFilter = MKPointOfInterestFilter(including: Constants.POICategories.tourist)
@@ -60,10 +119,34 @@ class MapViewModel: ObservableObject {
             searchResults = Array(sortedResults.prefix(Constants.Map.maxPOICount))
             error = nil
             
+            // デバッグ用：検索結果をログ出力
+            #if DEBUG
+            print("POI検索完了 - 見つかった件数: \(response.mapItems.count)")
+            print("表示する件数: \(searchResults.count)")
+            if searchResults.isEmpty {
+                print("⚠️ 検索結果が0件です。シミュレータでは観光地データが限られている可能性があります。")
+            }
+            #endif
+            
         } catch {
             if !Task.isCancelled {
-                self.error = error
-                searchResults = []
+                // MKError.placemarkNotFound (error 4) は無視して、単に結果なしとして扱う
+                if let mkError = error as? MKError, mkError.code == .placemarkNotFound {
+                    searchResults = []
+                    self.error = nil // エラーを表示しない
+                    #if DEBUG
+                    print("ℹ️ POI検索: 結果が見つかりませんでした（MKError.placemarkNotFound）")
+                    #endif
+                } else {
+                    self.error = error
+                    searchResults = []
+                    #if DEBUG
+                    print("❌ POI検索エラー: \(error.localizedDescription)")
+                    if let mkError = error as? MKError {
+                        print("MKError code: \(mkError.code.rawValue)")
+                    }
+                    #endif
+                }
             }
         }
     }
@@ -80,12 +163,20 @@ class MapViewModel: ObservableObject {
     
     /// 現在地に移動
     func moveToCurrentLocation() {
+        guard isLocationPermissionGranted else {
+            error = LocationError.permissionDenied
+            return
+        }
+        
         if let currentLocation = locationManager.currentLocation {
             region = MKCoordinateRegion(
                 center: currentLocation.coordinate,
                 latitudinalMeters: 1000,
                 longitudinalMeters: 1000
             )
+        } else {
+            // 現在地が取得されていない場合は、取得をリクエスト
+            locationManager.requestLocationPermission()
         }
     }
     
@@ -93,6 +184,7 @@ class MapViewModel: ObservableObject {
     func cleanup() {
         searchTask?.cancel()
         locationManager.stopLocationUpdates()
+        cancellables.removeAll()
     }
 }
 

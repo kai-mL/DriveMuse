@@ -100,9 +100,39 @@ MKMapViewをSwiftUIで利用するためのラッパー
 
 ## セットアップ
 
+### 1. プロジェクトのクローン
+```bash
+git clone [repository-url]
+cd DriveMuse
+```
+
+### 2. APIキーの設定
+1. `DriveMuse/Config/APIKeys.example.plist` を `APIKeys.plist` にコピー
+```bash
+cp DriveMuse/Config/APIKeys.example.plist DriveMuse/Config/APIKeys.plist
+```
+
+2. `APIKeys.plist` を開いて、実際のGemini APIキーを入力
+```xml
+<key>GEMINI_API_KEY</key>
+<string>あなたのGemini APIキーをここに入力</string>
+```
+
+### 3. Gemini APIキーの取得方法
+1. [Google AI Studio](https://aistudio.google.com/) にアクセス
+2. 「Get API key」をクリック
+3. 新しいAPIキーを作成
+4. 作成されたキーをコピーして `APIKeys.plist` に貼り付け
+
+### 4. ビルドと実行
 1. Xcodeでプロジェクトを開く
 2. 実機またはシミュレータでビルド・実行
 3. 位置情報の利用許可を与える
+
+### ⚠️ 重要な注意事項
+- `APIKeys.plist` ファイルは `.gitignore` に含まれているため、Gitにコミットされません
+- チーム開発の場合は、各開発者が個別にAPIキーを設定する必要があります
+- 本番環境では、より安全な方法（環境変数、Keychain等）でAPIキーを管理することを推奨します
 
 ## 必要な権限
 

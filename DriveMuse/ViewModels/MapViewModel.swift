@@ -79,14 +79,28 @@ class MapViewModel: ObservableObject {
         
         self.region = region
         
-        searchTask = Task {
-            // デバウンス用の遅延
-            try? await Task.sleep(nanoseconds: 300_000_000) // 0.3秒
-            
-            if Task.isCancelled { return }
-            
-            await performPOISearch(in: region)
+        // 検索範囲が大きく変わった場合のみ検索を実行
+        if shouldPerformSearch(for: region) {
+            searchTask = Task {
+                // デバウンス用の遅延を延長
+                try? await Task.sleep(nanoseconds: 500_000_000) // 0.5秒
+                
+                if Task.isCancelled { return }
+                
+                await performPOISearch(in: region)
+            }
         }
+    }
+    
+    /// 検索を実行すべきかどうかを判定
+    private func shouldPerformSearch(for newRegion: MKCoordinateRegion) -> Bool {
+        // 前回の検索地点から一定距離以上離れた場合のみ検索
+        let threshold: Double = 500 // メートル
+        
+        let currentCenter = MKMapPoint(newRegion.center)
+        let lastSearchCenter = MKMapPoint(region.center)
+        
+        return currentCenter.distance(to: lastSearchCenter) > threshold
     }
     
     /// 実際のPOI検索処理
@@ -98,6 +112,7 @@ class MapViewModel: ObservableObject {
         #if DEBUG
         print("POI検索開始 - 中心座標: \(region.center.latitude), \(region.center.longitude)")
         print("検索範囲: \(region.span.latitudeDelta) x \(region.span.longitudeDelta)")
+        print("現在の検索タスク数: \(searchTask != nil ? 1 : 0)")
         #endif
         
         do {

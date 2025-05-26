@@ -17,9 +17,9 @@ struct Constants {
     
     // MARK: - Map Configuration
     struct Map {
-        static let maxPOICount = 10
+        static let maxPOICount = 8 // 運転中は少なめに
         static let distanceForRating: Double = 2000.0
-        static let animationDuration: Double = 0.3
+        static let animationDuration: Double = 0.2 // 運転中は素早いアニメーション
     }
     
     // MARK: - POI Categories
@@ -35,9 +35,10 @@ struct Constants {
     
     // MARK: - UI Configuration
     struct UI {
-        static let detailViewHeight: CGFloat = 200
+        static let compactDetailViewHeight: CGFloat = 120 // 運転中向けのコンパクトサイズ
         static let cornerRadius: CGFloat = 12
         static let padding: CGFloat = 16
+        static let drivingButtonMinHeight: CGFloat = 44 // 運転中でもタップしやすいサイズ
     }
     
     // MARK: - Identifiers
@@ -57,5 +58,9 @@ struct Constants {
         static let locationPermissionError = "位置情報の許可が必要です。設定アプリから許可してください。"
         static let searchError = "検索でエラーが発生しました"
         static let locationUnavailable = "現在地を取得できません。しばらく時間をおいて再度お試しください。"
+        static let aiDescription = "AI による紹介"
+        static let aiGenerating = "魅力的な紹介文を生成中..."
+        static let aiRefresh = "AI説明を更新"
+        static let aiError = "説明の生成に失敗しました"
     }
 } 

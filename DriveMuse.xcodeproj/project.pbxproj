@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		7F1652D32DDB583900BDE2D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F1652BD2DDB583700BDE2D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F1652C42DDB583700BDE2D0;
+			remoteInfo = DriveMuse;
+		};
+		7F1652DD2DDB583900BDE2D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F1652BD2DDB583700BDE2D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F1652C42DDB583700BDE2D0;
+			remoteInfo = DriveMuse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F1652C52DDB583700BDE2D0 /* DriveMuse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveMuse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F1652D22DDB583900BDE2D0 /* DriveMuseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveMuseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F1652DC2DDB583900BDE2D0 /* DriveMuseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveMuseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4551D9262DE319730033A019 /* Exceptions for "DriveMuse" folder in "DriveMuse" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 7F1652C42DDB583700BDE2D0 /* DriveMuse */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		7F1652C72DDB583700BDE2D0 /* DriveMuse */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4551D9262DE319730033A019 /* Exceptions for "DriveMuse" folder in "DriveMuse" target */,
+			);
+			path = DriveMuse;
+			sourceTree = "<group>";
+		};
+		7F1652D52DDB583900BDE2D0 /* DriveMuseTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DriveMuseTests;
+			sourceTree = "<group>";
+		};
+		7F1652DF2DDB583900BDE2D0 /* DriveMuseUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DriveMuseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F1652C22DDB583700BDE2D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1652CF2DDB583900BDE2D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1652D92DDB583900BDE2D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F1652BC2DDB583700BDE2D0 = {
+			isa = PBXGroup;
+			children = (
+				7F1652C72DDB583700BDE2D0 /* DriveMuse */,
+				7F1652D52DDB583900BDE2D0 /* DriveMuseTests */,
+				7F1652DF2DDB583900BDE2D0 /* DriveMuseUITests */,
+				7F1652C62DDB583700BDE2D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F1652C62DDB583700BDE2D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F1652C52DDB583700BDE2D0 /* DriveMuse.app */,
+				7F1652D22DDB583900BDE2D0 /* DriveMuseTests.xctest */,
+				7F1652DC2DDB583900BDE2D0 /* DriveMuseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F1652C42DDB583700BDE2D0 /* DriveMuse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F1652E62DDB583900BDE2D0 /* Build configuration list for PBXNativeTarget "DriveMuse" */;
+			buildPhases = (
+				7F1652C12DDB583700BDE2D0 /* Sources */,
+				7F1652C22DDB583700BDE2D0 /* Frameworks */,
+				7F1652C32DDB583700BDE2D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7F1652C72DDB583700BDE2D0 /* DriveMuse */,
+			);
+			name = DriveMuse;
+			packageProductDependencies = (
+			);
+			productName = DriveMuse;
+			productReference = 7F1652C52DDB583700BDE2D0 /* DriveMuse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F1652D12DDB583900BDE2D0 /* DriveMuseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F1652E92DDB583900BDE2D0 /* Build configuration list for PBXNativeTarget "DriveMuseTests" */;
+			buildPhases = (
+				7F1652CE2DDB583900BDE2D0 /* Sources */,
+				7F1652CF2DDB583900BDE2D0 /* Frameworks */,
+				7F1652D02DDB583900BDE2D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F1652D42DDB583900BDE2D0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7F1652D52DDB583900BDE2D0 /* DriveMuseTests */,
+			);
+			name = DriveMuseTests;
+			packageProductDependencies = (
+			);
+			productName = DriveMuseTests;
+			productReference = 7F1652D22DDB583900BDE2D0 /* DriveMuseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7F1652DB2DDB583900BDE2D0 /* DriveMuseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F1652EC2DDB583900BDE2D0 /* Build configuration list for PBXNativeTarget "DriveMuseUITests" */;
+			buildPhases = (
+				7F1652D82DDB583900BDE2D0 /* Sources */,
+				7F1652D92DDB583900BDE2D0 /* Frameworks */,
+				7F1652DA2DDB583900BDE2D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F1652DE2DDB583900BDE2D0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7F1652DF2DDB583900BDE2D0 /* DriveMuseUITests */,
+			);
+			name = DriveMuseUITests;
+			packageProductDependencies = (
+			);
+			productName = DriveMuseUITests;
+			productReference = 7F1652DC2DDB583900BDE2D0 /* DriveMuseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F1652BD2DDB583700BDE2D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					7F1652C42DDB583700BDE2D0 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					7F1652D12DDB583900BDE2D0 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 7F1652C42DDB583700BDE2D0;
+					};
+					7F1652DB2DDB583900BDE2D0 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 7F1652C42DDB583700BDE2D0;
+					};
+				};
+			};
+			buildConfigurationList = 7F1652C02DDB583700BDE2D0 /* Build configuration list for PBXProject "DriveMuse" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F1652BC2DDB583700BDE2D0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7F1652C62DDB583700BDE2D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F1652C42DDB583700BDE2D0 /* DriveMuse */,
+				7F1652D12DDB583900BDE2D0 /* DriveMuseTests */,
+				7F1652DB2DDB583900BDE2D0 /* DriveMuseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F1652C32DDB583700BDE2D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1652D02DDB583900BDE2D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1652DA2DDB583900BDE2D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F1652C12DDB583700BDE2D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1652CE2DDB583900BDE2D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1652D82DDB583900BDE2D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F1652D42DDB583900BDE2D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F1652C42DDB583700BDE2D0 /* DriveMuse */;
+			targetProxy = 7F1652D32DDB583900BDE2D0 /* PBXContainerItemProxy */;
+		};
+		7F1652DE2DDB583900BDE2D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F1652C42DDB583700BDE2D0 /* DriveMuse */;
+			targetProxy = 7F1652DD2DDB583900BDE2D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7F1652E42DDB583900BDE2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F1652E52DDB583900BDE2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F1652E72DDB583900BDE2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UT4CLVZTJ5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DriveMuse/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "\"音声入力のためマイクを使用します\"";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "音声認識のためマイクとテキスト変換を使用します";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myoji.nikname.DriveMuse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F1652E82DDB583900BDE2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UT4CLVZTJ5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DriveMuse/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "\"音声入力のためマイクを使用します\"";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "音声認識のためマイクとテキスト変換を使用します";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myoji.nikname.DriveMuse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7F1652EA2DDB583900BDE2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myoji.nikname.DriveMuseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveMuse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DriveMuse";
+			};
+			name = Debug;
+		};
+		7F1652EB2DDB583900BDE2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myoji.nikname.DriveMuseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveMuse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DriveMuse";
+			};
+			name = Release;
+		};
+		7F1652ED2DDB583900BDE2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myoji.nikname.DriveMuseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DriveMuse;
+			};
+			name = Debug;
+		};
+		7F1652EE2DDB583900BDE2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myoji.nikname.DriveMuseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DriveMuse;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F1652C02DDB583700BDE2D0 /* Build configuration list for PBXProject "DriveMuse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F1652E42DDB583900BDE2D0 /* Debug */,
+				7F1652E52DDB583900BDE2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F1652E62DDB583900BDE2D0 /* Build configuration list for PBXNativeTarget "DriveMuse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F1652E72DDB583900BDE2D0 /* Debug */,
+				7F1652E82DDB583900BDE2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F1652E92DDB583900BDE2D0 /* Build configuration list for PBXNativeTarget "DriveMuseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F1652EA2DDB583900BDE2D0 /* Debug */,
+				7F1652EB2DDB583900BDE2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F1652EC2DDB583900BDE2D0 /* Build configuration list for PBXNativeTarget "DriveMuseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F1652ED2DDB583900BDE2D0 /* Debug */,
+				7F1652EE2DDB583900BDE2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F1652BD2DDB583700BDE2D0 /* Project object */;
+}
